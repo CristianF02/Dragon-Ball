@@ -1,0 +1,181 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Título centrado en la página */
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 2.5em;
+    margin-left: 220px;
+}
+
+/* Contenedor principal para organizar elementos */
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    margin-left: 220px;
+    /* Da espacio para la barra lateral */
+    z-index: 0;
+}
+
+/* Barra lateral fija a la izquierda */
+.sidebar-left {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    /* Para asegurar que esté sobre otros elementos */
+}
+
+/* Ajuste de ancho de la barra lateral para evitar superposición */
+.sidebar-left {
+    width: 200px;
+    /* Ancho adecuado para la barra lateral */
+}
+
+/* Imagen en la barra lateral */
+.sidebar-image {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+/* Contenedor de botones en la barra lateral */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.button-container button {
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #654ea3;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #70507c;
+}
+
+/* Contenedor de tarjetas */
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Adaptable a pantalla */
+    gap: 15px;
+    width: 100%;
+    padding: 20px 0;
+    justify-content: center;
+    margin-left: 220px;
+    /* Ajusta esto para que las tarjetas comiencen después de la barra lateral */
+}
+
+/* Estilo de la tarjeta */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    height: 450px;
+    max-width: 300px;
+    margin: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen de la tarjeta */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+/* Contenedor de la imagen de la tarjeta */
+.card-image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4a0072;
+    margin-bottom: 10px;
+}
+
+.card-race,
+.card-genero {
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Tarjeta de detalles */
+.details-card {
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #888;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    height: 300px;
+    text-align: justify;
+    overflow-y: auto;
+}
+
+/* Botón de cierre en la tarjeta de detalles */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
